@@ -1,4 +1,3 @@
-using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
@@ -17,6 +16,12 @@ namespace FleetManager.Controllers
         public ActionResult Update(Guid id, PutVehicle updateRequest)
         {
             updateRequest.Id = id;
+            throw new NotImplementedException();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteVehicle(int id)
+        {
             throw new NotImplementedException();
         }
     }
