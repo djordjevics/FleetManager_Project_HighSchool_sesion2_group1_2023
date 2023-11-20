@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
@@ -11,6 +12,12 @@ namespace FleetManager.Controllers
         public VehicleController(ILogger<VehicleController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteVehicle(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
