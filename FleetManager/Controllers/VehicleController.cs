@@ -1,3 +1,4 @@
+using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers;
@@ -19,22 +20,10 @@ public class VehicleController : ControllerBase
         updateRequest.Id = id;
         throw new NotImplementedException();
     }
-}
-        public VehicleController(ILogger<VehicleController> logger)
-        {
-            _logger = logger;
-        }
-        [HttpPut(Name = "UpdateVehicle")]
-        public ActionResult Update(Guid id, PutVehicle updateRequest)
-        {
-            updateRequest.Id = id;
-            throw new NotImplementedException();
-        }
 
-        [HttpDelete("{id}")]
-        public ActionResult DeleteVehicle(int id)
-        {
-            throw new NotImplementedException();
-        }
+    [HttpDelete("{id}")]
+    public ActionResult DeleteVehicle(Guid id)
+    {
+        throw new NotImplementedException();
     }
 }
