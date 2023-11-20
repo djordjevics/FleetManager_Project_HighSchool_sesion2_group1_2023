@@ -11,6 +11,11 @@ namespace FleetManager.Controllers
         {
             _logger = logger;
         }
+        [HttpGet]
+        public ActionResult GetAllFuelLogs()
+        {
+            throw new NotImplementedException();
+        }
 
         [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
         public IActionResult Get()
