@@ -1,3 +1,4 @@
+using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
@@ -12,5 +13,13 @@ namespace FleetManager.Controllers
         {
             _logger = logger;
         }
+        [HttpPost(Name = "AddVehicle")]
+        public ActionResult AddVehicle(Guid Id,AddVehicle AddRequest)
+        {
+            AddRequest.Id = Id;
+            throw new NotImplementedException();
+        }
+
+
     }
 }

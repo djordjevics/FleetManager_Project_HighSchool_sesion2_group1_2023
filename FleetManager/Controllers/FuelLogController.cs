@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FleetManager.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
 {
@@ -8,6 +9,11 @@ namespace FleetManager.Controllers
         public FuelLogController(ILogger<FuelLogController> logger)
         {
             _logger = logger;
+        }
+        [HttpGet (Name = "GetById")]
+        public ActionResult GetById(Guid Id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
