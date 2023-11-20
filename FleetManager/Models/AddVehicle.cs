@@ -1,10 +1,7 @@
-﻿using System.Text.Json.Serialization;
-
-namespace FleetManager.Models
+﻿namespace FleetManager.Models
 {
-    public class Vehicle
+    public class AddVehicle
     {
-        [JsonIgnoreAttribute]
         public Guid Id { get; set; }
 
         public string FuelType { get; set; } = default!;
@@ -17,7 +14,6 @@ namespace FleetManager.Models
 
         public string Model { get; set; } = default!;
 
-        public string License {  get; set; } = default!;
-
+        public string License { get; set; } = default!;
     }
 }

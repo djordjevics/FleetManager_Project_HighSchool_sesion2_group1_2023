@@ -14,7 +14,7 @@ public class VehicleController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPut(Name = "UpdateVehicle")]
+    [HttpPut("{id}",Name ="UpdateVehicle")]
     public ActionResult Update(Guid id, PutVehicle updateRequest)
     {
         updateRequest.Id = id;
@@ -22,8 +22,19 @@ public class VehicleController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public ActionResult DeleteVehicle(int id)
+    public ActionResult DeleteVehicle(Guid id)
     {
         throw new NotImplementedException();
     }
+        [HttpPost(Name = "AddVehicle")]
+        public ActionResult AddVehicle(Guid Id,AddVehicle AddRequest)
+        {
+            AddRequest.Id = Id;
+            throw new NotImplementedException();
+        }
+
+        [HttpGet(Name = "GetAllVehicles")]
+        public List<Vehicle> Get(){
+            throw new NotImplementedException();
+        }
 }
