@@ -32,6 +32,21 @@ public class VehicleController : ControllerBase
         {
             throw new NotImplementedException();
         }
+        [HttpPost(Name = "AddVehicle")]
+        public ActionResult AddVehicle(Guid Id,AddVehicle AddRequest)
+        {
+            AddRequest.Id = Id;
+            throw new NotImplementedException();
+        }
+
+
+    }
+}
+        [HttpDelete("{id}")]
+        public ActionResult DeleteVehicle(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         [HttpGet(Name = "GetAllVehicles")]
         public List<Vehicle> Get(){

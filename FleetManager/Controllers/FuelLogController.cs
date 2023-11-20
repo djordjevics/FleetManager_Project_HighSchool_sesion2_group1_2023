@@ -36,5 +36,10 @@ namespace FleetManager.Controllers
             fuelLog.Id = Guid.NewGuid();
             throw new NotImplementedException();
         }
+        [HttpGet (Name = "GetById")]
+        public ActionResult GetById(Guid Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
