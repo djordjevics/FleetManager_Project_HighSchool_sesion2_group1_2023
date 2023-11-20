@@ -10,7 +10,7 @@ namespace FleetManager.Controllers
             _logger = logger;
         }
 
-        [HttpDelete(Name = "DeleteFuelLog")]
+        [HttpDelete("{id}",Name = "DeleteFuelLog")]
         public ActionResult Delete(Guid id){
             throw new NotImplementedException();
         }
