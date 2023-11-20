@@ -25,6 +25,11 @@ namespace FleetManager.Controllers
             throw new NotImplementedException();
         }
 
+        [HttpDelete("{id}",Name = "DeleteFuelLog")]
+        public ActionResult Delete(Guid id){
+            throw new NotImplementedException();
+        }
+
         [HttpPost(Name ="AddLog")]
         public IActionResult Post(FuelLog fuelLog)
         {
