@@ -1,3 +1,4 @@
+using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
@@ -11,6 +12,11 @@ namespace FleetManager.Controllers
         public VehicleController(ILogger<VehicleController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet(Name = "GetAllVehicles")]
+        public List<Vehicle> Get(){
+            throw new NotImplementedException();
         }
     }
 }
