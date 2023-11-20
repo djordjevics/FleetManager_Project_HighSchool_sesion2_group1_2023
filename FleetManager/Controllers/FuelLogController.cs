@@ -2,6 +2,8 @@
 
 namespace FleetManager.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class FuelLogController : ControllerBase
     {
         private readonly ILogger<FuelLogController> _logger;
