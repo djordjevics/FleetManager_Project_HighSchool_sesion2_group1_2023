@@ -12,9 +12,28 @@ namespace FleetManager.Controllers
         {
             _logger = logger;
         }
+
         [HttpGet]
         public ActionResult GetAllFuelLogs()
         {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
+        public IActionResult Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpDelete("{id}",Name = "DeleteFuelLog")]
+        public ActionResult Delete(Guid id){
+            throw new NotImplementedException();
+        }
+
+        [HttpPost(Name ="AddLog")]
+        public IActionResult Post(FuelLog fuelLog)
+        {
+            fuelLog.Id = Guid.NewGuid();
             throw new NotImplementedException();
         }
         [HttpGet (Name = "GetById")]
