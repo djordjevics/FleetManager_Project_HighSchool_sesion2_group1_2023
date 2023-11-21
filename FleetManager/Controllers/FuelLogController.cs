@@ -19,14 +19,15 @@ namespace FleetManager.Controllers
             throw new NotImplementedException();
         }
 
-        [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
-        public IActionResult Get()
+        [HttpGet(Name = "GetById")]
+        public ActionResult GetById(Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        [HttpDelete("{id}",Name = "DeleteFuelLog")]
-        public ActionResult Delete(Guid id){
+        [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
+        public IActionResult Get()
+        {
             throw new NotImplementedException();
         }
 
@@ -36,8 +37,9 @@ namespace FleetManager.Controllers
             fuelLog.Id = Guid.NewGuid();
             throw new NotImplementedException();
         }
-        [HttpGet (Name = "GetById")]
-        public ActionResult GetById(Guid Id)
+
+        [HttpDelete("{id}", Name = "DeleteFuelLog")]
+        public ActionResult Delete(Guid id)
         {
             throw new NotImplementedException();
         }
