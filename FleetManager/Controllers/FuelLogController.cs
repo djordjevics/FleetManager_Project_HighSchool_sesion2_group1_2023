@@ -27,7 +27,8 @@ namespace FleetManager.Controllers
         [HttpGet("{id}",Name = "GetById")]
         public ActionResult GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            var result = _fuelLogService.GetById(Id);
+            return Ok(result);
         }
 
         [HttpGet("Vehicle/{vehicleId}",Name ="LogsByVehicle")]

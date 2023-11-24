@@ -1,3 +1,4 @@
+using BusinessLogic.Services;
 using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ public class VehicleController : ControllerBase
 {
     private readonly ILogger<VehicleController> _logger;
 
+    private IVehicleService _vehicleService;
     public VehicleController(ILogger<VehicleController> logger)
     {
         _logger = logger;
@@ -31,7 +33,8 @@ public class VehicleController : ControllerBase
     public ActionResult AddVehicle(Guid Id,AddVehicle AddRequest)
     {
         AddRequest.Id = Id;
-        throw new NotImplementedException();
+        var result = _vehicleService.AddVehicle(Id, AddRequest);
+        return Ok(result);
     }
 
     [HttpDelete("{id}", Name = "DeleteVehicle")]
