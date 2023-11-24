@@ -1,4 +1,5 @@
-﻿using FleetManager.Models;
+﻿using BusinessLogic.Services;
+using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FleetManager.Controllers
@@ -8,24 +9,28 @@ namespace FleetManager.Controllers
     public class FuelLogController : ControllerBase
     {
         private readonly ILogger<FuelLogController> _logger;
+
+        private IFuelLogService _fuelLogService;
+        
         public FuelLogController(ILogger<FuelLogController> logger)
         {
             _logger = logger;
+            _fuelLogService = new FuelLogService();
         }
 
         [HttpGet]
         public ActionResult GetAllFuelLogs()
         {
-            throw new NotImplementedException();
+           return Ok(_fuelLogService.GetAllFuelLogs());
         }
 
-        [HttpGet(Name = "GetById")]
+        [HttpGet("{id}",Name = "GetById")]
         public ActionResult GetById(Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
+        [HttpGet("Vehicle/{vehicleId}",Name ="LogsByVehicle")]
         public IActionResult GetLogsByCarId()
         {
             throw new NotImplementedException();
@@ -43,5 +48,6 @@ namespace FleetManager.Controllers
         {
             throw new NotImplementedException();
         }
+        
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FleetManager.Controllers;
 
 [ApiController]
-[Route("[controller]/{id}")]
+[Route("[controller]")]
 public class VehicleController : ControllerBase
 {
     private readonly ILogger<VehicleController> _logger;
