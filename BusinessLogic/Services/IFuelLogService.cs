@@ -4,10 +4,10 @@ namespace BusinessLogic.Services;
 
 public interface IFuelLogService
 {
-    void GetAllFuelLogs();
-    void GetById(Guid Id);
-    void Get();
-    void Post(FuelLog fuelLog);
+    List<FuelLog> GetAllFuelLogs();
+    FuelLog GetById(Guid Id);
+    List<FuelLog> GetLogsByCarId();
+    FuelLog Add(FuelLog fuelLog);
     void Delete(Guid id);
 
 }
