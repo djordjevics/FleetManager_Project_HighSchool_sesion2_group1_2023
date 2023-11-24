@@ -1,11 +1,10 @@
-﻿namespace FleetManager.Models
-{
-    public class FuelLogGetByID
-    {
-        public FuelLog GetByID(Guid id)
-        {
-            return new FuelLog { };
-        }
+﻿namespace FleetManager.Models;
 
+public class FuelLogGetByID
+{
+    public FuelLog GetByID(Guid id)
+    {
+        return new FuelLog { };
     }
+
 }

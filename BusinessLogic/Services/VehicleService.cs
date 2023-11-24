@@ -1,5 +1,6 @@
 ﻿using FleetManager.Models;
 
+
 namespace BusinessLogic.Services;
 
 public class VehicleService : IVehicleService

@@ -1,19 +1,18 @@
-﻿namespace FleetManager.Models
+﻿namespace FleetManager.Models;
+
+public class AddVehicle
 {
-    public class AddVehicle
-    {
-        public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
-        public string FuelType { get; set; } = default!;
+    public string FuelType { get; set; } = default!;
 
-        public int FuelCapacity { get; set; }
+    public int FuelCapacity { get; set; }
 
-        public string FuelUnit { get; set; } = default!;
+    public string FuelUnit { get; set; } = default!;
 
-        public string Manufacturer { get; set; } = default!;
+    public string Manufacturer { get; set; } = default!;
 
-        public string Model { get; set; } = default!;
+    public string Model { get; set; } = default!;
 
-        public string License { get; set; } = default!;
-    }
+    public string License { get; set; } = default!;
 }

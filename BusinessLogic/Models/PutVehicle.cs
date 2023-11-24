@@ -1,16 +1,15 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace FleetManager.Models
+namespace FleetManager.Models;
+
+public class PutVehicle
 {
-    public class PutVehicle
-    {
-        [JsonIgnoreAttribute]
-        public Guid Id { get; set; }
+    [JsonIgnoreAttribute]
+    public Guid Id { get; set; }
 
-        public string FuelType { get; set; } = default!;
+    public string FuelType { get; set; } = default!;
 
-        public string License { get; set; } = default!;
+    public string License { get; set; } = default!;
 
-        public string FuelUnit { get; set; } = default!;
-    }
+    public string FuelUnit { get; set; } = default!;
 }

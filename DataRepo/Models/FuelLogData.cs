@@ -1,6 +1,6 @@
-﻿namespace FleetManager.Models;
+﻿namespace DataRepo.Models;
 
-public class FuelLog
+public class FuelLogData
 {
     public Guid Id { get; set; }
 
