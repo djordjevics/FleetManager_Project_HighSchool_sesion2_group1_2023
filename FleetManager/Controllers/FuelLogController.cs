@@ -24,13 +24,13 @@ namespace FleetManager.Controllers
            return Ok(_fuelLogService.GetAllFuelLogs());
         }
 
-        [HttpGet(Name = "GetById")]
+        [HttpGet("{id}",Name = "GetById")]
         public ActionResult GetById(Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
+        [HttpGet("Vehicle/{vehicleId}",Name ="LogsByVehicle")]
         public IActionResult GetLogsByCarId()
         {
             throw new NotImplementedException();
