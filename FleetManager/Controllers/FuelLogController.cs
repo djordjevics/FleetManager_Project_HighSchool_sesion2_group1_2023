@@ -26,7 +26,7 @@ namespace FleetManager.Controllers
         }
 
         [HttpGet("{vehicleId}",Name ="LogsByVehicle")]
-        public IActionResult Get()
+        public IActionResult GetLogsByCarId()
         {
             throw new NotImplementedException();
         }

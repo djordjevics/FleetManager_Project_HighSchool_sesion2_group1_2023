@@ -6,7 +6,7 @@ namespace BusinessLogic.Services;
 public interface IVehicleService
 {
     List<Vehicle> Get();
-    void Update(Guid id, PutVehicle updateRequest);
-    void AddVehicle(Guid Id, AddVehicle AddRequest);
+    Vehicle Update(Guid id, PutVehicle updateRequest);
+    Vehicle AddVehicle(Guid Id, AddVehicle AddRequest);
     void DeleteVehicle(Guid id);
 }
