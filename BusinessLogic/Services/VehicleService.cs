@@ -16,7 +16,15 @@ public class VehicleService : IVehicleService
 
     public List<Vehicle> Get()
     {
-        throw new NotImplementedException();
+        List<Vehicle> list = new List<Vehicle>(){
+            new Vehicle(){
+                Id = Guid.NewGuid()
+            },
+            new Vehicle(){
+                Id = Guid.NewGuid()
+            }
+        };
+        return list;
     }
 
     public Vehicle Update(Guid id, PutVehicle updateRequest)
