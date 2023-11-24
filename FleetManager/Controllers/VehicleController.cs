@@ -1,3 +1,4 @@
+using BusinessLogic.Services;
 using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +9,18 @@ namespace FleetManager.Controllers;
 public class VehicleController : ControllerBase
 {
     private readonly ILogger<VehicleController> _logger;
+    private IVehicleService _vehicleService;
 
     public VehicleController(ILogger<VehicleController> logger)
     {
         _logger = logger;
+        _vehicleService = new VehicleService();
     }
 
     [HttpGet(Name = "GetAllVehicles")]
-    public List<Vehicle> Get()
+    public ActionResult Get()
     {
-        throw new NotImplementedException();
+        return Ok(_vehicleService.Get());
     }
 
     [HttpPut("{id}",Name ="UpdateVehicle")]
