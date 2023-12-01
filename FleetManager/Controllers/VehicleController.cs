@@ -1,3 +1,4 @@
+using BusinessLogic.Services;
 using DataRepo.Models;
 using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,16 +10,18 @@ namespace FleetManager.Controllers;
 public class VehicleController : ControllerBase
 {
     private readonly ILogger<VehicleController> _logger;
+    private IVehicleService _service;
 
-    public VehicleController(ILogger<VehicleController> logger)
+    public VehicleController(ILogger<VehicleController> logger, IVehicleService service)
     {
         _logger = logger;
+        _service = service;
     }
 
     [HttpGet(Name = "GetAllVehicles")]
     public List<Vehicle> Get()
     {
-        throw new NotImplementedException();
+        return _service.Get();
     }
 
     [HttpPut("{id}",Name ="UpdateVehicle")]
@@ -32,7 +35,8 @@ public class VehicleController : ControllerBase
     public ActionResult AddVehicle(Guid Id,AddVehicle AddRequest)
     {
         AddRequest.Id = Id;
-        throw new NotImplementedException();
+        _service.AddVehicle(Id, AddRequest);
+        return Ok();
     }
 
     [HttpDelete("{id}", Name = "DeleteVehicle")]

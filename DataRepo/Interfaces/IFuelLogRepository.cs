@@ -10,6 +10,8 @@ public interface IFuelLogRepository
 
     List<FuelLogData> GetByVehicleId(Guid vehicleId);
 
+    Guid Add(FuelLogData data);
+
     void Update(FuelLogData entity);
 
     void Delete(Guid id);
