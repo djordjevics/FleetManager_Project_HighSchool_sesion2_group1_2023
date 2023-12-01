@@ -47,7 +47,8 @@ namespace FleetManager.Controllers
         [HttpDelete("{id}", Name = "DeleteFuelLog")]
         public ActionResult Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _fuelLogService.Delete(id);
+            return Ok();
         }
         
     }

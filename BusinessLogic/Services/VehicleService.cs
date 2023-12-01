@@ -46,6 +46,7 @@ public class VehicleService : IVehicleService
             FuelUnit = vd.FuelUnit,
             License = vd.License
         }).ToList();
+
     }
 
     public Vehicle Update(Guid id, PutVehicle updateRequest)
