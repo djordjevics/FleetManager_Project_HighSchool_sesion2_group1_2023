@@ -16,4 +16,7 @@ public interface IFuelLogRepository
 
     void Delete(Guid id);
 
+
+
+
 }
