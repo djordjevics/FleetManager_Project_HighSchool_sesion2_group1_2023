@@ -1,9 +1,17 @@
-﻿using FleetManager.Models;
+﻿using DataRepo.Implementation;
+using DataRepo.Interfaces;
+using DataRepo.Models;
+using FleetManager.Models;
 
 namespace BusinessLogic.Services;
 
 public class FuelLogService : IFuelLogService
 {
+    private IFuelLogRepository _repo;
+    public FuelLogService(FleetDbContext context)
+    {
+        _repo = new FuelLogRepository(context);
+    }
     public FuelLog Add(FuelLog fuelLog)
     {
         throw new NotImplementedException();

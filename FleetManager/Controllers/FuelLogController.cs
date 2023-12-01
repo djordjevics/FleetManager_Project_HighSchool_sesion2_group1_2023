@@ -1,4 +1,5 @@
 ﻿using BusinessLogic.Services;
+using DataRepo.Models;
 using FleetManager.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,10 @@ namespace FleetManager.Controllers
 
         private IFuelLogService _fuelLogService;
         
-        public FuelLogController(ILogger<FuelLogController> logger)
+        public FuelLogController(ILogger<FuelLogController> logger, FleetDbContext context)
         {
             _logger = logger;
-            _fuelLogService = new FuelLogService();
+            _fuelLogService = new FuelLogService(context);
         }
 
         [HttpGet]
