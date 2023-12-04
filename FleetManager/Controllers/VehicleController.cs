@@ -21,7 +21,7 @@ public class VehicleController : ControllerBase
     [HttpGet(Name = "GetAllVehicles")]
     public ActionResult Get()
     {
-        return _service.Get();
+        return Ok(_service.Get());
     }
 
     [HttpPut("{id}",Name ="UpdateVehicle")]
