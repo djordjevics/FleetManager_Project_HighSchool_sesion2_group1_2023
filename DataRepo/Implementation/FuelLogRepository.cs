@@ -26,7 +26,7 @@ namespace DataRepo.Implementation
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _context.Remove(id);
         }
 
         public List<FuelLogData> GetAll()
