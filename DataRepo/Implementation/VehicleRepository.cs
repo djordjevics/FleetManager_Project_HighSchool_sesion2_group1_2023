@@ -21,6 +21,7 @@ namespace DataRepo.Implementation
         {
             AddRequest.Id = Guid.NewGuid();
             context.vehicleData.Add(AddRequest);
+            context.SaveChanges();
             return AddRequest.Id;
         }
 
