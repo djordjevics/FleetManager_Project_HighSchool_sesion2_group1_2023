@@ -46,7 +46,19 @@ namespace DataRepo.Implementation
 
         public void Update(FuelLogData entity)
         {
-            throw new NotImplementedException();
+            var updated = _context.fuelLogData.Find(entity.Id);
+            if (updated == null)
+            {
+                _context.fuelLogData.Add(entity);
+            }
+            else 
+            {
+                updated.Currency = entity.Currency;
+                updated.Price = entity.Price;
+                updated.FuelUnit = entity.FuelUnit;
+                updated.FuelAdded = entity.FuelAdded;
+            }
+            _context.SaveChanges();
         }
     }
 }
