@@ -25,10 +25,10 @@ public class VehicleController : ControllerBase
     }
 
     [HttpPut("{id}",Name ="UpdateVehicle")]
-    public ActionResult Update(Guid id, PutVehicle updateRequest)
+    public void Update(Guid id, PutVehicle updateRequest)
     {
         updateRequest.Id = id;
-        throw new NotImplementedException();
+        _service.Update(id, updateRequest);
     }
 
     [HttpPost(Name = "AddVehicle")]

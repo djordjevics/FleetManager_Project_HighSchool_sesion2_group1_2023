@@ -51,6 +51,6 @@ public class VehicleService : IVehicleService
 
     public Vehicle Update(Guid id, PutVehicle updateRequest)
     {
-        throw new NotImplementedException();
+        _repo.Update(id, updateRequest);
     }
 }
