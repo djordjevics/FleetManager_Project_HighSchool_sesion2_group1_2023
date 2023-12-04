@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FleetDbContext>(options =>
     {
 
-        options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=model;Trusted_Connection=True; TrustServerCertificate=True;");
+        options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=model;Trusted_Connection=True; TrustServerCertificate=True;",b=>b.MigrationsAssembly("FleetManager"));
     });
 
 builder.Services.AddScoped<IVehicleService, VehicleService>();

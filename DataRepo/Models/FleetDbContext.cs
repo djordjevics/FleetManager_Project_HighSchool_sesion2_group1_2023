@@ -10,7 +10,7 @@ namespace DataRepo.Models
 
         public FleetDbContext(DbContextOptions<FleetDbContext> options) : base(options)
         {
-
+            
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
