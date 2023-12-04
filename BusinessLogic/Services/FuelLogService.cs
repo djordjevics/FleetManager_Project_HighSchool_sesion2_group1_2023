@@ -19,15 +19,7 @@ public class FuelLogService : IFuelLogService
 
     public void Delete(Guid id)
     {
-        List<FuelLog> fuelLog = new List<FuelLog>(){
-            new FuelLog() {
-                Id = Guid.NewGuid()
-            },
-            new FuelLog(){
-                Id = Guid.NewGuid()
-            }
-        };
-        fuelLog.Remove(GetById(id));
+        _repo.Delete(id);
     }
 
     public List<FuelLog> GetAllFuelLogs()
