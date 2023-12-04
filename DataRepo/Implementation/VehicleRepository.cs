@@ -1,10 +1,5 @@
 ﻿using DataRepo.Interfaces;
 using DataRepo.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataRepo.Implementation
 {
@@ -37,7 +32,19 @@ namespace DataRepo.Implementation
 
         public void Update(VehicleData updateRequest)
         {
-            throw new NotImplementedException();
+            var upd = context.vehicleData.Find(updateRequest.Id);
+            if (upd == null)
+            {
+                context.vehicleData.Add(updateRequest);
+            }
+            else
+            {
+                upd.FuelType = updateRequest.FuelType;
+                upd.FuelCapacity = updateRequest.FuelCapacity;
+                upd.FuelUnit = updateRequest.FuelUnit;
+                upd.License = updateRequest.License;
+            }
+            context.SaveChanges();
         }
     }
 }
