@@ -19,7 +19,7 @@ public class VehicleController : ControllerBase
     }
 
     [HttpGet(Name = "GetAllVehicles")]
-    public List<Vehicle> Get()
+    public ActionResult Get()
     {
         return Ok(_service.Get());
     }
