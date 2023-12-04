@@ -36,10 +36,11 @@ namespace DataRepo.Implementation
 
         public FuelLogData GetById(Guid id)
         {
-            throw new NotImplementedException();
+          
+            return _context.fuelLogData.Find(id); 
         }
 
-        public List<FuelLogData> GetByVehicleId(Guid vehicleId)
+            public List<FuelLogData> GetByVehicleId(Guid vehicleId)
         {
             return _context.fuelLogData.Where(f=>f.VehicleId == vehicleId).ToList();
         }

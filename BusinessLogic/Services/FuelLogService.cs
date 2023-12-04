@@ -37,7 +37,18 @@ public class FuelLogService : IFuelLogService
 
     public FuelLog GetById(Guid Id)
     {
-        throw new NotImplementedException();
+        var data= _repo.GetById(Id);
+        if (data is null)
+            return null;
+
+        return new FuelLog {
+            Currency = data.Currency,
+            Price = data.Price,
+            FuelUnit = data.FuelUnit,
+            FuelAdded = data.FuelAdded,
+            Id = data.Id,
+            VehicleId=data.VehicleId
+        };
     }
 
     public List<FuelLog> GetLogsByCarId(Guid id)
