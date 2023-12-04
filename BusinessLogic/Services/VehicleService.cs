@@ -32,7 +32,7 @@ public class VehicleService : IVehicleService
 
     public void DeleteVehicle(Guid id)
     {
-        throw new NotImplementedException();
+        _repo.DeleteVehicle(id);
     }
 
     public List<Vehicle> Get()
