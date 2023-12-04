@@ -44,4 +44,19 @@ public class FuelLogService : IFuelLogService
     {
         throw new NotImplementedException();
     }
+
+    public void Update(FuelLog fuelLog)
+    {
+        var data = new FuelLogData
+        {
+            Id = fuelLog.Id,
+            FuelAdded = fuelLog.FuelAdded,
+            FuelUnit = fuelLog.FuelUnit,
+            Currency = fuelLog.Currency,
+            Price = fuelLog.Price,
+            VehicleId = fuelLog.VehicleId
+        };
+
+        _repo.Update(data);
+    }
 }
