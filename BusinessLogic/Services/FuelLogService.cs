@@ -24,7 +24,15 @@ public class FuelLogService : IFuelLogService
 
     public List<FuelLog> GetAllFuelLogs()
     {
-        throw new NotImplementedException();
+        return _repo.GetAll().Select(vd => new FuelLog()
+        {
+            Id = vd.Id,
+            VehicleId = vd.VehicleId,
+            FuelAdded = vd.FuelAdded,
+            FuelUnit = vd.FuelUnit,
+            Price = vd.Price,
+            Currency = vd.Currency
+        }).ToList();
     }
 
     public FuelLog GetById(Guid Id)
