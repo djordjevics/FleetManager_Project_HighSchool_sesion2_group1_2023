@@ -41,7 +41,7 @@ namespace DataRepo.Implementation
 
         public List<FuelLogData> GetByVehicleId(Guid vehicleId)
         {
-            throw new NotImplementedException();
+            return _context.fuelLogData.Where(f=>f.VehicleId == vehicleId).ToList();
         }
 
         public void Update(FuelLogData entity)

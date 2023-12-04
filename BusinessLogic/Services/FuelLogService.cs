@@ -32,8 +32,16 @@ public class FuelLogService : IFuelLogService
         throw new NotImplementedException();
     }
 
-    public List<FuelLog> GetLogsByCarId()
+    public List<FuelLog> GetLogsByCarId(Guid id)
     {
-        throw new NotImplementedException();
+        return _repo.GetByVehicleId(id).Select(vd => new FuelLog()
+        {
+            Id = vd.Id,
+            VehicleId = vd.VehicleId,
+            FuelAdded = vd.FuelAdded,
+            FuelUnit = vd.FuelUnit,
+            Price = vd.Price,
+            Currency = vd.Currency
+        }).ToList();
     }
 }
