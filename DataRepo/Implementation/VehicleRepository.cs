@@ -27,7 +27,7 @@ namespace DataRepo.Implementation
 
         public void DeleteVehicle(Guid id)
         {
-            throw new NotImplementedException();
+            context.Remove(id);
         }
 
         public List<VehicleData> Get()
